@@ -1,6 +1,8 @@
 #! groovy
 node('edtftpjpro && linux && ant && eclipse && jdk') {
 	try {
+		sh 'cp -f $HOME/edtftpjpro/* $WORKSPACE/plugins/com.aptana.ide.libraries.subscription/'
+
 		buildPlugin {
 			builder = 'com.aptana.ide.libraries.subscription.build'
 		}
